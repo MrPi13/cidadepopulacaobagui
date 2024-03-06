@@ -1,0 +1,18 @@
+const readLineSync = require("readline-sync")
+const Cidade = require("./class.js")
+
+let nome = readLineSync.question("Digite o nome da cidade:")
+let estado = readLineSync.question("Digite o estado em que a cidade está:")
+let numPopulacao = readLineSync.question("Digite o número de habitantes da cidade:")
+let numHomens = readLineSync.question("Digite o número de habitantes homens da cidade:")
+let NumMulheres = readLineSync.question("Digite o número de habitantes mulheres da cidade:")
+
+const cidade1 = new Cidade(nome,estado,numPopulacao,numHomens,NumMulheres)
+let homensPercentual = cidade1.percentualHomens()
+let mulheresPercentual = cidade1.percentualMulheres()
+console.log("============================")
+console.log(" Dados da cidade:")
+console.log("============================")
+console.log("percentual de homens da cidade de ",nome," é de: ",homensPercentual.toFixed(2))
+console.log("percentual de mulheres da cidade de ",nome," é de: ",mulheresPercentual.toFixed(2))
+console.log("============================")
